@@ -1,7 +1,8 @@
-searchEngineKeyWord="bahubali"
+searchEngineKeyWord="chelsea"
 require(tm)
 require(twitteR)
 require(RCurl)
+require(wordcloud)
 Consumer_Key="OPPA5VhYKtsRugJBYyYQvIEWQ"
 Consumer_Secret ="8KAJDzmLog4Tjfwl2bMGPdqftMAN9uHdAxv01frkEZXfjrrjbT"
 Access_Token=	"129692093-51O6nZGHOAluZ77k12wnaFTRi5JfndPb2J5XxyxT"
@@ -16,5 +17,4 @@ chels_clean=tm_map(chels_clean,content_transformer(tolower))
 chels_clean=tm_map(chels_clean,removeWords,stopwords("english"))
 chels_clean=tm_map(chels_clean,removeNumbers)
 chels_clean=tm_map(chels_clean,stripWhitespace)
-chels_clean=tm_map(chels_clean,removeWords,)
 wordcloud(chels_clean,scale = c(3,0.7),random.order = F,colors =brewer.pal(6, "Dark2") )
